@@ -150,6 +150,10 @@ p {
   margin-top: .5em;
 }
 
+#gallery > .row {
+  margin: 1em 0;
+}
+
 
 footer {
   color: #bbb;
