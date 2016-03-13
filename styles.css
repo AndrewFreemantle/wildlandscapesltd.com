@@ -38,7 +38,7 @@ header > div.col-md-4.contact {
   font-size: 1.14em;
 }
 header > div.col-md-4.contact > div.contact {
-  margin: 1.2em 0;
+  margin: .6em 0;
 }
 header > div > div.contact > i.fa {
   color: #575757;
@@ -46,6 +46,10 @@ header > div > div.contact > i.fa {
 }
 i.fa.fa-envelope-o.fa-2x {
   font-size: 1.6em;
+}
+i.fa.fa-phone.fa-2x {
+  font-size: 1.6em;
+  margin: 0 3px;
 }
 
 nav {
@@ -175,4 +179,8 @@ footer p > a:hover,
 footer p > a:focus,
 footer p > a:active {
   color: #cdcdcd;
+}
+footer p.contact > span {
+  min-width: 4em;
+  display: inline-block;
 }
