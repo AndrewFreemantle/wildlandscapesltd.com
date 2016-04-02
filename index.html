@@ -59,20 +59,25 @@
   <div id="photo-carousel">
     <div class="item">
       <img src="images/photos/home/1.jpg" alt="">
+      <h2 class="tab-page-title"></h2>
       <h3>Soft Landscaping</h3>
     </div>
     <div class="item">
       <img src="images/photos/home/2.jpg" alt="">
+      <h2 class="tab-page-title"></h2>
       <h3>Complete planting design</h3>
     </div>
     <div class="item">
       <img src="images/photos/home/3.jpg" alt="">
+      <h2 class="tab-page-title"></h2>
       <h3>Maintenance</h3>
     </div>
     <div class="item">
       <img src="images/photos/home/4.jpg" alt="">
+      <h2 class="tab-page-title"></h2>
       <h3>Projects both large or small</h3>
     </div>
+
   </div>
 
   <div class="container tab-content">
@@ -111,7 +116,7 @@
 
     </div>  <!-- home -->
 
-    <div id="soft-landscaping" role="tabpanel" class="tab-pane fade">
+    <div id="soft-landscaping" role="tabpanel" class="tab-pane fade" data-title="Soft Landscaping">
       <p>Our skilled teams have undertaken soft landscape projects across a variety of sectors including house building, commercial and retail, from low maintenance to formal garden style, single visit or phased works. Our 16 year experience within the commercial landscape industry ensures our clients can be confident of works being undertaken with the best horticultural practices, to the highest standard and within a timely manner. Our site operatives are all <abbr title="Construction Skills Certification Scheme">CSCS</abbr> registered and we are <abbr title="Contractors Health and Safety Assessment Scheme">CHAS</abbr> accredited, as health and safety is our primary concern.</p>
 
       <h3>Services</h3>
@@ -133,7 +138,7 @@
 
     </div>  <!-- soft-landscaping -->
 
-    <div id="site-clearance" role="tabpanel" class="tab-pane fade">
+    <div id="site-clearance" role="tabpanel" class="tab-pane fade" data-title="Site Clearance & Preparation">
       <p>At Wild Landscapes we work alongside developers and main contractors of many sizes in their site setup stage.  Tree and vegetation removal can be a complex and controversial process.  We can help manage this process, working together with the planning, ecologists and build teams to streamline the work.</p>
 
       <h3>Services</h3>
@@ -151,7 +156,7 @@
 
     </div>  <!-- site-clearance -->
 
-    <div id="maintenance" role="tabpanel" class="tab-pane fade">
+    <div id="maintenance" role="tabpanel" class="tab-pane fade" data-title="Maintenance">
       <p>Wild Landscapes provide a comprehensive grounds maintenance service to retain the quality landscape schemes we have created and existing schemes. We are able to offer services to a variety of sectors including residential, commercial and retail. Our highly skilled staff are all CSCS trained and have a variety of relevant qualifications including NPTC chainsaw and pesticide certificates.</p>
 
       <h3>Services</h3>
@@ -171,7 +176,7 @@
 
     </div>  <!-- maintenance -->
 
-    <div id="gallery" role="tabpanel" class="tab-pane fade">
+    <div id="gallery" role="tabpanel" class="tab-pane fade" data-title="Gallery">
       <div class="gallery clearfix">
         <h3>Medical Centre, Pocklington</h3>
         <a href="images/photos/gallery/001-WildLandscapesLtd-MedicalCentre-Pocklington.jpg" class=""><img src="images/photos/gallery/thumbs/001-WildLandscapesLtd-MedicalCentre-Pocklington.jpg" alt="Medical Centre, Pocklington" title="Medical Centre, Pocklington"/></a>
@@ -196,9 +201,13 @@
         <a href="images/photos/gallery/008-WildLandscapesLtd-ThePureyCust-York.jpg" class=""><img src="images/photos/gallery/thumbs/008-WildLandscapesLtd-ThePureyCust-York.jpg" alt="The Purey Cust, York" title="The Purey Cust, York"/></a>
         <a href="images/photos/gallery/009-WildLandscapesLtd-ThePureyCust-York.jpg" class=""><img src="images/photos/gallery/thumbs/009-WildLandscapesLtd-ThePureyCust-York.jpg" alt="The Purey Cust, York" title="The Purey Cust, York"/></a>
       </div>
+
+      <div class="clearfix">
+        <p>Is your project next? <a href="#contat-us" role="tab" data-toggle="tab">Contact us!</a></p>
+      </div>
     </div>  <!-- gallery -->
 
-    <div id="contact-us" class="tab-pane fade">
+    <div id="contact-us" class="tab-pane fade" data-title="Contact Us">
       contact-us
     </div>  <!-- contact us -->
   </div>
@@ -216,9 +225,9 @@
 
         <div class="col-md-3">
           <h4>Key Services</h4>
-          <p class=""><a href="#soft-landscaping" role="tab" data-toggle="tab">Soft Landscaping</a></p>
-          <p class=""><a href="#site-clearance" role="tab" data-toggle="tab">Site Clearance</a></p>
-          <p class=""><a href="#maintenance" role="tab" data-toggle="tab">Maintenance</a></p>
+          <p><a href="#soft-landscaping" role="tab" data-toggle="tab">Soft Landscaping</a></p>
+          <p><a href="#site-clearance" role="tab" data-toggle="tab">Site Clearance</a></p>
+          <p><a href="#maintenance" role="tab" data-toggle="tab">Maintenance</a></p>
         </div>
 
         <div class="col-md-3 text-right">
@@ -243,11 +252,11 @@
   $(document).ready(function() {
 
     // TEMP: stop the slideshow after a few seconds in local development
-    if (window.location.protocol === "file:") {
-      window.setTimeout(function() {
-        $("#photo-carousel").trigger("owl.stop");
-      }, 900);
-    }
+    // if (window.location.protocol === "file:") {
+    //   window.setTimeout(function() {
+    //     $("#photo-carousel").trigger("owl.stop");
+    //   }, 900);
+    // }
 
     // set the email icon to be the same width as the telephone icon
     $("i.fa.fa-envelope-o").css({ width: $("i.fa.fa-mobile").outerWidth() });
@@ -263,6 +272,7 @@
         pagination: false,
         autoPlay: true,
         afterInit: function() {
+          $("#photo-carousel .item > h2.tab-page-title").css({ width: photoWidth + "px" });
           $("#photo-carousel .item > h3").css({ width: photoWidth + "px" });
           // show the first overlay..
           $("#photo-carousel .item > h3").delay(paginationSpeed).animate( { top: "-=25", opacity: 1 }, 600);
@@ -282,8 +292,44 @@
         // itemsMobile : false
     });
 
+    // navigation: stop and resize the main photo carousel if we're not home
+    $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+      //e.target          - newly activated tab
+      //e.relatedTarget   - previous active tab
+      var href = $(e.target).attr("href");
+
+      if (href === "#home") {
+        // hide and reset the tab page title
+        $("#photo-carousel .item > h2").animate({ opacity: "0" }, 200, function() {
+          $(this).css({ top: "30px" });
+          $("#photo-carousel").removeClass("tabpage-header");
+        });
+
+        // we have to set up our own interval to restart the photo carousel
+        //  as there's a bug in the 'owl.play' trigger  :o\
+        window.wlyPhotoCarouselIntervalId = window.setInterval(function() {
+          $("#photo-carousel").trigger("owl.next");
+        }, paginationSpeed * 4);
+      } else {
+        // pause the photo carousel
+        if (window.wlyPhotoCarouselIntervalId) {
+          window.clearInterval(window.wlyPhotoCarouselIntervalId);
+          window.wlyPhotoCarouselIntervalId = undefined;
+        } else {
+          $("#photo-carousel").trigger("owl.stop");
+        }
+        // apply the header class to shrink the header down
+        $("#photo-carousel").addClass("tabpage-header");
+
+        // now grab the tab-page title and show it
+        $(".tab-page-title").text($(href).attr('data-title'));
+        $("#photo-carousel .item > h2.tab-page-title").css({ top: "35px", opacity: 0 });
+        $("#photo-carousel .item > h2.tab-page-title").delay(200).animate( { top: "-=15", opacity: 1 }, 300);
+      }
+    });
+
     // gallery: initialise the lightbox
-    var lightbox = $('.gallery a').simpleLightbox();
+    var lightbox = $(".gallery a").simpleLightbox();
 
   });
   </script>

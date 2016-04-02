@@ -107,9 +107,14 @@ ul.dropdown-menu {
 }
 
 #photo-carousel {
-  /* margin-top: 1em; */
   max-height: 400px;
   overflow: hidden;
+  height: 400px;
+  -webkit-transition: height 600ms ease;
+  -moz-transition: height 600ms ease;
+  -ms-transition: height 600ms ease;
+  -o-transition: height 600ms ease;
+  transition: height 600ms ease;
 }
 
 #photo-carousel .item > h3 {
@@ -128,6 +133,21 @@ ul.dropdown-menu {
   width: 100%;
   height: auto;
   border-radius: 3px;
+}
+
+#photo-carousel .item > h2.tab-page-title {
+  position: absolute;
+  opacity: 0;
+  top: 35px;
+  color: #fff;
+  font-size: 3em;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+
+.tabpage-header {
+  height: 130px!important;
 }
 
 #home h1 {
