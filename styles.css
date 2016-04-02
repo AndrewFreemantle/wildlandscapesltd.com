@@ -30,6 +30,10 @@ a:active {
   color: #088635;
 }
 
+.container.narrow {
+  width: 970px;
+}
+
 header {
   padding: 1em 0;
 }
