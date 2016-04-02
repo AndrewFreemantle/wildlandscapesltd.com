@@ -57,9 +57,9 @@ i.fa.fa-phone.fa-2x {
 }
 
 nav {
-  border-top: 1px solid #d0d0d0;
-  border-bottom: 1px solid #d0d0d0;
-  background-color: #d0d0d0;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  background-color: #555;
 }
 .nav .open > a,
 .nav .open > a:focus,
@@ -72,7 +72,7 @@ nav > ul > li {
   text-align: center;
 }
 ul.nav > li > a {
-  color: #4d4a43;
+  color: #ccc;
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 1.1em;
@@ -88,8 +88,8 @@ ul.dropdown-menu > li > a:focus,
 ul.dropdown-menu > li.active > a,
 ul.dropdown-menu > li.active > a:focus,
 ul.dropdown-menu > li.active > a:hover {
-  color: #088635;
-  background-color: #d0d0d0;
+  color: #fff;
+  background-color: #555;
 }
 
 ul.dropdown-menu > li {
